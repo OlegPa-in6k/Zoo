@@ -3,12 +3,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   var hedgehog2  = new Hedgehog("Boba", "Hedgehog", 1000, 1000, 100);
   var elephant1  = new Elephant("Smoffy", "Elephant", 1000, 1000, 500);
   var elephant2  = new Elephant("Smok", "Elephant", 1000, 1000, 500);
+
   var animals = [hedgehog1, hedgehog2, elephant1, elephant2];
 
-    var dropdown = new DropDown({
+    var animalList = new AnimalsListService({
       title: "Animals",
       items: animals
     });
 
-    document.body.appendChild(dropdown.getElem());
+    var chatService = new ChatService({
+      items: animals
+    });
+
+    document.body.appendChild(animalList.getElem());
 });

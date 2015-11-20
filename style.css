@@ -1,6 +1,13 @@
-.menu ul {
+.menu .ul {
   display: none;
   margin: 0;
+
+}
+
+.chat {
+  position: absolute;
+  width: 50%;
+  left: 50%;
 }
 
 .menu .title {
@@ -8,16 +15,32 @@
   cursor: pointer;
 }
 
-.menu .title:before {
-  content: '▶';
-  padding-right: 6px;
-  color: green;
+.menu .btn-kill {
+
 }
 
-.menu.open ul {
-  display: block;
+.menu .li {
+  padding-bottom: 22px;
+  font-size: 16px;
 }
 
-.menu.open .title:before {
-  content: '▼';
+
+.chat .ul {
+  display: none;
+  margin: 0;
+
+}
+
+.chat .title {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.chat .btn-kill {
+
+}
+
+.chat .li {
+  padding-bottom: 22px;
+  font-size: 16px;
 }

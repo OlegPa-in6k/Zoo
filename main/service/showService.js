@@ -1,4 +1,4 @@
-function DropDown(options) {
+function AnimalsListService(options) {
   var elem;
 
   function getElem() {
@@ -8,24 +8,18 @@ function DropDown(options) {
 
   function render() {
     elem = document.createElement('div');
-    elem.className = "menu";
+    elem.className = "animals";
 
     var titleElem = document.createElement('span');
     elem.appendChild(titleElem);
     titleElem.className = "title";
     titleElem.textContent = options.title;
 
-    elem.onmousedown = function() {
-      return false;
-    };
-
-    elem.onclick = function(event) {
-      if (event.target.closest('.title')) {
-        toggle();
-      }
-    }
+    renderItems();
 
   }
+
+
 
   function renderItems() {
     var items = options.items || [];
@@ -34,28 +28,23 @@ function DropDown(options) {
       var li = document.createElement('li');
       li.textContent = item.getName() + " " + item.getType();
       list.appendChild(li);
+
+      var btnKill = document.createElement("button");
+
+      btnKill.type = "button";
+      btnKill.className = "btn-kill"
+      btnKill.textContent = "Kill";
+      btnKill.onclick = function(){
+        list.removeChild(li);
+        list.removeChild(btnKill);
+
+      }
+      list.appendChild(btnKill);
+
     });
     elem.appendChild(list);
   }
 
-  function open() {
-    if (!elem.querySelector('ul')) {
-      renderItems();
-    }
-    elem.classList.add('open');
-  };
-
-  function close() {
-    elem.classList.remove('open');
-  };
-
-  function toggle() {
-    if (elem.classList.contains('open')) close();
-    else open();
-  };
-
   this.getElem = getElem;
-  this.toggle = toggle;
-  this.close = close;
-  this.open = open;
+
 }

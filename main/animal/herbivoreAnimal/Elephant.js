@@ -1,4 +1,4 @@
-function Elephant(name, type, eatTime, activity, size){
+function Elephant(name, eatTime, activity, size){
   CarnivoreAnimal.apply(this, arguments);
   this.type = "Elephant";
   this.voice = "Elephant voice";
