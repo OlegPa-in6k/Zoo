@@ -1,4 +1,4 @@
-function Menu(options) {
+function DropDown(options) {
   var elem;
 
   function getElem() {
@@ -32,7 +32,7 @@ function Menu(options) {
     var list = document.createElement('ul');
     items.forEach(function(item) {
       var li = document.createElement('li');
-      li.textContent = item;
+      li.textContent = item.getName() + " " + item.getType();
       list.appendChild(li);
     });
     elem.appendChild(list);
