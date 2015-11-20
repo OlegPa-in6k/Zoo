@@ -7,8 +7,9 @@ function AnimalsListService(options) {
   }
 
   function render() {
+
     elem = document.createElement('div');
-    elem.className = "animals";
+    elem.className = "animalsList";
 
     var titleElem = document.createElement('span');
     elem.appendChild(titleElem);
@@ -19,10 +20,8 @@ function AnimalsListService(options) {
 
   }
 
-
-
   function renderItems() {
-    var items = options.items || [];
+    var items = options.animals || [];
     var list = document.createElement('ul');
     items.forEach(function(item) {
       var li = document.createElement('li');
@@ -34,11 +33,19 @@ function AnimalsListService(options) {
       btnKill.type = "button";
       btnKill.className = "btn-kill"
       btnKill.textContent = "Kill";
-      btnKill.onclick = function(){
-        list.removeChild(li);
-        list.removeChild(btnKill);
 
+      btnKill.onclick = function(){
+
+      list.removeChild(li);
+      list.removeChild(btnKill);
+      for(var i = 0; i < items.length; i++){
+        if(items[i].getName() == item.getName()){
+          delete options.animals[i];
+          delete ChatService.animals;
+        }
       }
+    }
+
       list.appendChild(btnKill);
 
     });

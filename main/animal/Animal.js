@@ -5,6 +5,7 @@ function Animal(name, type, eatTime, activity, size ){
   this.activity = activity;
   this.size = size;
   this.voice = "Animal voice";
+
 }
 
 Animal.prototype.getName = function(){
@@ -21,4 +22,13 @@ return this.size;
 
 Animal.prototype.getVoice = function(){
 return this.voice;
+}
+
+Animal.prototype.getActivity = function(){
+  return this.activity;
+}
+
+
+Animal.prototype.setActivity = function() {
+  this.activity = 0;
 }

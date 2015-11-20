@@ -1,46 +1,37 @@
-.menu .ul {
+.animalsList .ul {
   display: none;
   margin: 0;
 
 }
 
-.chat {
-  position: absolute;
-  width: 50%;
-  left: 50%;
-}
-
-.menu .title {
+.animalsList .title {
   font-weight: bold;
-  cursor: pointer;
+  
 }
 
-.menu .btn-kill {
-
+.animalsList {
+  position: absolute;
+  left : 50%;
+  width: 50%;
 }
 
-.menu .li {
+.animalsList .li {
   padding-bottom: 22px;
   font-size: 16px;
 }
 
-
-.chat .ul {
+.chat .chat-ul {
   display: none;
   margin: 0;
 
 }
+
 
 .chat .title {
   font-weight: bold;
   cursor: pointer;
 }
 
-.chat .btn-kill {
+.chat .div{
 
-}
-
-.chat .li {
-  padding-bottom: 22px;
-  font-size: 16px;
 }
