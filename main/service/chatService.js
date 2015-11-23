@@ -14,19 +14,22 @@ function ChatService(options) {
   }
 
   function renderItems() {
-    var items = options.animals || [];
+    var animals = options.animals || [];
     chat = document.createElement('div');
 
-    items.forEach(function(item) {
+    animals.getAnimals().forEach(function(animal) {
+
         var timer = setInterval(function(){
-        print(item);},item.getActivity())
+        print(animal);},animal.getActivity())
+
      });
+
     elem.appendChild(chat);
   }
 
-  function print(item){
+  function print(animal){
 
-    chat.innerHTML = item.getName() + " : " + item.getVoice() + "<br>"+ chat.innerHTML;
+    chat.innerHTML = animal.getName() + " : " + animal.getVoice() + "<br>"+ chat.innerHTML;
     if ( chat.innerHTML.length > 999 )
       chat.innerHTML = chat.innerHTML.substring(0, 999);
 

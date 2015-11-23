@@ -1,5 +1,6 @@
-function AnimalsListService(options) {
+function ShowService(options) {
   var elem;
+  var animals = options.animals || [];
 
   function getElem() {
     if (!elem) render();
@@ -9,48 +10,77 @@ function AnimalsListService(options) {
   function render() {
 
     elem = document.createElement('div');
-    elem.className = "animalsList";
+    elem.className = "zoo";
 
-    var titleElem = document.createElement('span');
-    elem.appendChild(titleElem);
-    titleElem.className = "title";
-    titleElem.textContent = options.title;
+    // var titleElem = document.createElement('span');
+    // elem.appendChild(titleElem);
+    // titleElem.className = "title";
+    // titleElem.textContent = options.title;
 
-    renderItems();
+    showList();
+    showChat();
 
   }
 
-  function renderItems() {
-    var items = options.animals || [];
-    var list = document.createElement('ul');
-    items.forEach(function(item) {
-      var li = document.createElement('li');
-      li.textContent = item.getName() + " " + item.getType();
-      list.appendChild(li);
+  function showList() {
+      var animalListDiv = document.createElement('div');
+      animalListDiv.className = "animalList";
 
-      var btnKill = document.createElement("button");
+      var titleElem = document.createElement('span');
+      animalListDiv.appendChild(titleElem);
 
-      btnKill.type = "button";
-      btnKill.className = "btn-kill"
-      btnKill.textContent = "Kill";
+      titleElem.className = "title";
+      titleElem.textContent = options.title;
 
-      btnKill.onclick = function(){
+      var list = document.createElement('ul');
 
-      list.removeChild(li);
-      list.removeChild(btnKill);
-      for(var i = 0; i < items.length; i++){
-        if(items[i].getName() == item.getName()){
-          delete options.animals[i];
-          delete ChatService.animals;
-        }
-      }
-    }
+      animals.getAnimals().forEach(function(animal) {
+        var li = document.createElement('li');
 
-      list.appendChild(btnKill);
+        li.textContent = animal.getName() + " " + animal.getType();
+        list.appendChild(li);
 
+        var btnKill = document.createElement("button");
+
+        btnKill.type = "button";
+        btnKill.className = "btn-kill"
+        btnKill.textContent = "Kill";
+
+        btnKill.onclick = function(){
+          animals.removeAnimal(animal);
+          list.removeChild(li);
+          clearInterval(animal.timer);
+
+        };
+
+        li.appendChild(btnKill);
     });
-    elem.appendChild(list);
+
+    animalListDiv.appendChild(list);
+
+    elem.appendChild(animalListDiv);
   }
+
+  function showChat() {
+
+    chat = document.createElement('div');
+    chat.className = "chat";
+
+    animals.getAnimals().forEach(function(animal) {
+        animal.timer = setInterval(function(){
+        print(animal);},animal.getActivity())
+     });
+    elem.appendChild(chat);
+    
+  }
+
+
+  function print(animal){
+    chat.innerHTML = animal.getName() + " : " + animal.getVoice() + "<br>"+ chat.innerHTML;
+    if ( chat.innerHTML.length > 999 )
+      chat.innerHTML = chat.innerHTML.substring(0, 999);
+
+}
 
   this.getElem = getElem;
 

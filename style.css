@@ -1,19 +1,28 @@
-.animalsList .ul {
+.zoo {
+  /*position: absolute;*/
+  /*left : 50%;
+  width: 50%;*/
+}
+.animalList{
+  position: absolute;
+  left : 50%;
+  width: 50%;
+}
+
+
+
+.animalList .ul {
   display: none;
   margin: 0;
 
 }
 
-.animalsList .title {
+.zoo .animalList .title {
   font-weight: bold;
-  
+
 }
 
-.animalsList {
-  position: absolute;
-  left : 50%;
-  width: 50%;
-}
+
 
 .animalsList .li {
   padding-bottom: 22px;

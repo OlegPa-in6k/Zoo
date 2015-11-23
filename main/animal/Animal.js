@@ -29,6 +29,6 @@ Animal.prototype.getActivity = function(){
 }
 
 
-Animal.prototype.setActivity = function() {
-  this.activity = 0;
+Animal.prototype.setActivity = function(number) {
+  this.activity = number;
 }
