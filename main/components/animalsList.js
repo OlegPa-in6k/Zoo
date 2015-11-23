@@ -25,7 +25,6 @@ function Animals(options) {
 
   function showList() {
 
-
       var list = document.createElement('ul');
 
       animals.getAnimals().forEach(function(animal) {
@@ -36,10 +35,15 @@ function Animals(options) {
         li.textContent = animal.getName() + " " + animal.getType();
         list.appendChild(li);
 
+
         animal.eatTimer1 = setTimeout(function(){
         list.removeChild(li);
         clearInterval(animal.timer);
         clearInterval(animal.eatTimer);
+        var chatUl = document.getElementById('chatUl');
+        var chatLi = document.createElement('li');
+        chatLi.textContent = "animal is Dead!!";
+        chatUl.insertBefore(chatLi, chatUl.firstChild);
         }, animal.getEatTime());
 
 
@@ -53,6 +57,7 @@ function Animals(options) {
           list.removeChild(li);
           clearInterval(animal.timer);
           clearInterval(animal.eatTimer);
+          clearTimeout(animal.eatTimer1);
 
         };
 

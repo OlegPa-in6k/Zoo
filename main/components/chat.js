@@ -16,11 +16,26 @@ function Chat(options) {
     renderItems();
   }
 
+  // function sayHi(){
+  // alert ("Hello");
+  // }
+  //
+  // var firtsTimeout = setTimeout(sayHi, 3000);
+  //
+  //
+  // function sayBy() {
+  // firtsTimeout;
+  // alert("113");
+  // }
+
+  var second = setTimeout(sayBy, 5000);
+
 
   function renderItems(){
 
       var animals = options.animals || [];
       list = document.createElement('ul');
+      list.id = "chatUl";
 
       animals.getAnimals().forEach(function(animal){
         animal.timer = setInterval(function(){
