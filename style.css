@@ -1,46 +1,30 @@
-.zoo {
-  /*position: absolute;*/
-  /*left : 50%;
-  width: 50%;*/
-}
-.animalList{
+.names {
   position: absolute;
   left : 50%;
-  width: 50%;
+  width : 50%;
+}
+.chat {
+  position: absolute;
+  right : 50%;
+  width : 50%;
+
 }
 
+.names .title {
+  font-weight: bold;
+}
 
-
-.animalList .ul {
+.names .ul {
   display: none;
   margin: 0;
-
 }
 
-.zoo .animalList .title {
-  font-weight: bold;
-
-}
-
-
-
-.animalsList .li {
+.names-li {
   padding-bottom: 22px;
   font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
-
-.chat .chat-ul {
-  display: none;
-  margin: 0;
-
-}
-
-
-.chat .title {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.chat .div{
-
+.names .btn-kill {
+  margin-left: 10px;
 }

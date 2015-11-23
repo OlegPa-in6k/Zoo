@@ -1,17 +1,21 @@
 
 describe("HerbivoreAnimal functions", function() {
-  var carnivore  = new HerbivoreAnimal("HerbivoreAnimalName", "HerbivoreAnimalType", 1000, 1000, 100);
+  var herbivore  = new HerbivoreAnimal("HerbivoreAnimalName", "HerbivoreAnimalType", 1000, 1000, 100);
 
 it ("test Use Voice", function(){
-expect(carnivore.getVoice()).toBe("HerbivoreAnimal voice");
+expect(herbivore.getVoice()).toBe("HerbivoreAnimal voice");
 });
 
 it ("get animal name", function(){
-  expect(carnivore.getName()).toBe("HerbivoreAnimalName");
+  expect(herbivore.getName()).toBe("HerbivoreAnimalName");
 });
 
 it ("get animal type", function(){
-  expect(carnivore.getType()).toBe("HerbivoreAnimalType");
+  expect(herbivore.getType()).toBe("HerbivoreAnimalType");
 });
+
+it ("get Parent class" , function(){
+  expect (herbivore instanceof Animal).toBe(true);
+})
 
 });

@@ -13,4 +13,8 @@ it ("get animal type", function(){
   expect(carnivore.getType()).toBe("carnivoreType");
 });
 
+it ("get Parent class" , function(){
+  expect (carnivore instanceof Animal).toBe(true);
+})
+
 });

@@ -1,12 +1,10 @@
-function AnimalsService() {
+function Zoo() {
   var self = this;
   var animals = [];
 
   this.addAnimal = function addAnimal(animal) {
     animals.push(animal);
   }
-
-
 
   this.getAnimals = function getAnimals() {
     return animals;

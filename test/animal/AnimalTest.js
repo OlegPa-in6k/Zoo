@@ -12,6 +12,7 @@ it ("get animal name", function(){
 it ("get animal type", function(){
   expect(animal.getType()).toBe("type");
 });
+
 it ("get animal size", function(){
   expect(animal.getSize()).toBe(100);
 });

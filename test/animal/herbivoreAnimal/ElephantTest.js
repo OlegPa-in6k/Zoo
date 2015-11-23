@@ -13,4 +13,12 @@ it ("get Elephant type", function(){
   expect(elephant.getType()).toBe("Elephant");
 });
 
+it ("get Main parent class" , function(){
+  expect (elephant instanceof Animal).toBe(true);
+})
+
+// it ("get Parent class" , function(){
+//   expect (elephant instanceof HerbivoreAnimal).toBe(true);
+// })
+
 });
