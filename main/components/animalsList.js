@@ -2,6 +2,7 @@ function Animals(options) {
   var elem;
   var animals = options.animals || [];
 
+
   function getElem() {
     if (!elem) render();
     return elem;
@@ -28,22 +29,21 @@ function Animals(options) {
       var list = document.createElement('ul');
 
       animals.getAnimals().forEach(function(animal) {
+
         var li = document.createElement('li');
         li.className = "names-li";
 
         li.textContent = animal.getName() + " " + animal.getType();
         list.appendChild(li);
 
-        animal.eatTimer = setTimeout(function(){
+        animal.eatTimer1 = setTimeout(function(){
         list.removeChild(li);
         clearInterval(animal.timer);
         clearInterval(animal.eatTimer);
         }, animal.getEatTime());
 
 
-
         var btnKill = document.createElement("button");
-
         btnKill.type = "button";
         btnKill.className = "btn-kill"
         btnKill.textContent = "Kill";
@@ -56,8 +56,22 @@ function Animals(options) {
 
         };
 
+        var btnFeed = document.createElement("button");
+        btnFeed.type = "button";
+        btnFeed.className = "btn-feed"
+        btnFeed.textContent = "Feed";
 
+        btnFeed.onclick = function(e){
+          clearTimeout(animal.eatTimer1);
+          animal.eatTimer1 = setTimeout(function(){
+          list.removeChild(li);
+          clearInterval(animal.timer);
+          clearInterval(animal.eatTimer);
+        }, animal.getEatTime());
 
+         };
+
+        li.appendChild(btnFeed);
         li.appendChild(btnKill);
     });
 
