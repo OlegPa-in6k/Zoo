@@ -31,7 +31,6 @@ function Animals(options) {
 
         var li = document.createElement('li');
         li.className = "names-li";
-
         li.textContent = animal.getName() + " " + animal.getType();
         list.appendChild(li);
 
