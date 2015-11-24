@@ -1,8 +1,8 @@
 function Elephant(name, eatTime, activity, size){
-  CarnivoreAnimal.apply(this, arguments);
+  HerbivoreAnimal.apply(this, arguments);
   this.type = "Elephant";
   this.voice = "Elephant voice";
 }
 
-Elephant.prototype = Object.create(CarnivoreAnimal.prototype);
+Elephant.prototype = Object.create(HerbivoreAnimal.prototype);
 Elephant.prototype.constructor = Elephant;

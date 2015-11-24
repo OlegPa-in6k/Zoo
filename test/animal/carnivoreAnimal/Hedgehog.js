@@ -17,8 +17,12 @@ it ("get Main parent class" , function(){
   expect (hedgehog instanceof Animal).toBe(true);
 })
 
-it ("get Parent class" , function(){
+it ("get kind class" , function(){
   expect (hedgehog instanceof CarnivoreAnimal).toBe(true);
+})
+
+it ("get Parent class" , function(){
+  expect (hedgehog instanceof Hedgehog).toBe(true);
 })
 
 });

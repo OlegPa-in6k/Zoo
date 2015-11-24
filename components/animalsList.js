@@ -20,7 +20,6 @@ function Animals(options) {
 
     showList();
 
-
   }
 
   function showList() {
@@ -41,7 +40,7 @@ function Animals(options) {
         clearInterval(animal.eatTimer);
         var chatUl = document.getElementById('chatUl');
         var chatLi = document.createElement('li');
-        chatLi.textContent = "animal is Dead!!";
+        chatLi.textContent = animal.getName() + " just die!";
         chatUl.insertBefore(chatLi, chatUl.firstChild);
         }, animal.getEatTime());
 

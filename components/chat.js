@@ -28,7 +28,7 @@ function Chat(options) {
   // alert("113");
   // }
 
-  var second = setTimeout(sayBy, 5000);
+  // var second = setTimeout(sayBy, 5000);
 
 
   function renderItems(){

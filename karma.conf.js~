@@ -17,7 +17,6 @@ module.exports = function(config) {
     files: [
       'core/*.js',
       'core/**/*.js',
-      'dom/**/*.js',
       'test/**/*.js'
     ],
 
